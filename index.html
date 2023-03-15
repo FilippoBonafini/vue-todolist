@@ -22,11 +22,36 @@
 
 </head>
 <!-- CORPO DEL PROGETTO -->
-<body>
+<body class="bg-dark">
 
     <!-- APP CONTAINER-------------------------------------------------->
     <div id="app">
-        {{hello}}
+        <div class="container-sm p-5">
+            <div class="card">
+                <div class="card-body">
+                  <h2 class="card-title text-center p-2">To do:</h2>
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Inserisci task:" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="elementName">
+                    <button class="btn btn-outline-secondary p-3" type="button" id="button-addon2" @click="createItem()">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                  <ul class="list-group" v-for="(toDo,index) in toDoList" v-if="toDoList.length > 0">
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div class="h4" :class="{ 'text-decoration-line-through':toDo.done }">{{toDo.elementName}}</div>
+                        <div>
+                            <i class="fa-solid fa-trash p-2 mx-2" role="button" @click="deleteItem(index)"></i>
+                            <i class="fa-solid fa-delete-left p-2 mx-2" role="button" v-if="toDo.done" @click ="saveItem(index)"></i>
+                            <i class="fa-solid fa-check p-2 mx-2" role="button" v-else @click ="doneItem(index)"></i>
+                        </div>
+                    </li>
+                  </ul>
+                  <div class="alert alert-warning" role="alert" v-else>
+                    Lista vuota!
+                  </div>
+                </div>
+              </div>
+        </div>
     </div>
     <!-- /APP CONTAINER------------------------------------------------->
 
