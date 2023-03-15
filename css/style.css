@@ -9,7 +9,9 @@
 
 /* COMMON */
 /* ------ */
-
+[v-cloak] {
+    display: none;
+  }
 
 /* GESTIONE ICONE TODO */
 /* --- */

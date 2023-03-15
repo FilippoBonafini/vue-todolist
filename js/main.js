@@ -27,7 +27,7 @@ createApp({
     }
   },
   methods:{
-    
+
     // FUNZIONE CHE ELIMINA UNA VOCE DALL'ARRAY DEGLI OGGETTI 
     deleteItem(index){
       this.toDoList.splice(index,1);
@@ -44,8 +44,10 @@ createApp({
         elementName: this.elementName,
         done: false
       }
-      this.toDoList.push(newElement);
-      this.elementName = '';
+      if(newElement.elementName !== ''){
+        this.toDoList.push(newElement);
+        this.elementName = '';
+      }
     },
 
     // FUNZIONE CHE RENDE NON FATTO UN ELEMENTO 

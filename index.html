@@ -33,7 +33,7 @@
     <div id="app">
         <div class="container-fluid p-5">
             <!-- CARD  -->
-            <div class="card">
+            <div class="card" >
 
                 <!-- HEADER DELLA CARD  -->
                 <div class="card-header">
@@ -43,7 +43,7 @@
                     <!-- /TITOLO  -->
                     <!-- INPUT DOVE VERRA' SCRITTA LA TASK  -->
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Inserisci task:" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="elementName">
+                        <input type="text" class="form-control fs-3" placeholder="Inserisci task:" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="elementName">
                         <button class="btn btn-outline-secondary p-3" type="button" id="button-addon2" @click="createItem()">
                             <i class="fa-solid fa-plus"></i>
                         </button>
@@ -61,10 +61,10 @@
                         <li class="list-group-item d-flex justify-content-between align-items-center" :class="{ 'bg-dark-subtle':toDo.done }">
 
                             <!-- TESTO DELLA TASK  -->
-                            <div class="h4" :class="{ 'text-decoration-line-through':toDo.done }">{{toDo.elementName}}</div>
+                            <div v-cloak class="fs-4" :class="{ 'text-decoration-line-through':toDo.done }">{{toDo.elementName}}</div>
                             <!-- /TESTO DELLA TASK  -->
                             <!-- OPZIONI DELLA TASK  -->
-                            <div class="options">
+                            <div v-cloak class="options">
                                 <i class="fa-solid fa-trash menuIcon" role="button" @click="deleteItem(index)"></i>
                                 <i class="fa-solid fa-delete-left menuIcon" role="button" v-if="toDo.done" @click="saveItem(index)"></i>
                                 <i class="fa-solid fa-check menuIcon" role="button" v-else @click="doneItem(index)"></i>
@@ -76,7 +76,7 @@
                     <!-- /ELEMENTO DI TEMPLATE CHE VERRA' CREATO X VOLTE  -->
 
                     <!-- MESSAGGIO CHE VIENE MOSTRATO NEL CASO IN CUI LA LISTA SIA VUOTA  -->
-                    <div class="alert alert-light h3" role="alert" v-else>
+                    <div v-cloak class="alert alert-light h3" role="alert" v-else>
                         Lista vuota!
                     </div>
                     <!-- /MESSAGGIO CHE VIENE MOSTRATO NEL CASO IN CUI LA LISTA SIA VUOTA  -->
