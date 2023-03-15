@@ -26,27 +26,29 @@
 
     <!-- APP CONTAINER-------------------------------------------------->
     <div id="app">
-        <div class="container-sm p-5">
+        <div class="container-fluid p-5">
             <div class="card">
-                <div class="card-body">
-                  <h2 class="card-title text-center p-2">To do:</h2>
+                <div class="card-header">
+                  <h2 class="card-title text-center p-2">Planning</h2>
                   <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Inserisci task:" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="elementName">
                     <button class="btn btn-outline-secondary p-3" type="button" id="button-addon2" @click="createItem()">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                   </div>
+                </div>
+                <div class="card-body">
                   <ul class="list-group" v-for="(toDo,index) in toDoList" v-if="toDoList.length > 0">
-                    <li class="list-group-item d-flex justify-content-between">
+                    <li class="list-group-item d-flex justify-content-between align-items-center":class="{ 'bg-dark-subtle':toDo.done }">
                         <div class="h4" :class="{ 'text-decoration-line-through':toDo.done }">{{toDo.elementName}}</div>
-                        <div>
-                            <i class="fa-solid fa-trash p-2 mx-2" role="button" @click="deleteItem(index)"></i>
-                            <i class="fa-solid fa-delete-left p-2 mx-2" role="button" v-if="toDo.done" @click ="saveItem(index)"></i>
-                            <i class="fa-solid fa-check p-2 mx-2" role="button" v-else @click ="doneItem(index)"></i>
+                        <div class="options">
+                            <i class="fa-solid fa-trash menuIcon" role="button" @click="deleteItem(index)"></i>
+                            <i class="fa-solid fa-delete-left menuIcon" role="button" v-if="toDo.done" @click ="saveItem(index)"></i>
+                            <i class="fa-solid fa-check menuIcon" role="button" v-else @click ="doneItem(index)"></i>
                         </div>
                     </li>
                   </ul>
-                  <div class="alert alert-warning" role="alert" v-else>
+                  <div class="alert alert-light h3" role="alert" v-else>
                     Lista vuota!
                   </div>
                 </div>

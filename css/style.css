@@ -8,9 +8,42 @@
 
 /* COMMON */
 /* ------ */
-body{
-    font-family: 'Poppins', sans-serif;
+
+
+/* GESTIONE ICONE TODO */
+/* --- */
+.menuIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px;
+    margin: 0 12px;
+    transition-duration: 0.5s;
+    font-size: 20px;
+}
+.fa-trash{
+    color:rgb(215, 35, 35) ;
+}
+.fa-trash:hover{
+    color: white;
+    background-color: rgb(215, 35, 35);
+    border-radius: 40px;
 }
 
-/* APP */
-/* --- */
+.fa-delete-left{
+    color: rgb(228, 137, 18);
+}
+.fa-delete-left:hover{
+    color: white;
+    background-color: rgb(228, 137, 18);
+    border-radius: 40px;
+}
+
+.fa-check{
+    color:green ;
+}
+.fa-check:hover{
+    color: white;
+    background-color: green;
+    border-radius: 40px;
+}
