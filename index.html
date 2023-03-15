@@ -43,9 +43,9 @@
                     <!-- /TITOLO  -->
                     <!-- INPUT DOVE VERRA' SCRITTA LA TASK  -->
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control fs-3" placeholder="Inserisci task:" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="elementName">
-                        <button class="btn btn-outline-secondary p-3" type="button" id="button-addon2" @click="createItem()">
-                            <i class="fa-solid fa-plus"></i>
+                        <input type="text" class="form-control fs-3" placeholder="Inserisci task:" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="elementName" :class="{ 'border border-danger':error }">
+                        <button class="btn btn-outline-secondary p-3" type="button" id="button-addon2" @click="createItem()" :class="{ 'border border-danger':error }">
+                            <i class="fa-solid fa-plus" :class="{ 'text-danger':error }"></i>
                         </button>
                     </div>
                     <!-- /INPUT DOVE VERRA' SCRITTA LA TASK  -->

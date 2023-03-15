@@ -9,6 +9,7 @@ createApp({
     return {
       // DATO CHE SI AUTOSCRIVE IN BASE ALL'INPUT DELL'UTENTE 
       elementName:'',
+      error: false,
         // OGGETTI NELLA LISTA 
         toDoList:[
           {
@@ -46,7 +47,12 @@ createApp({
       }
       if(newElement.elementName !== ''){
         this.toDoList.push(newElement);
+        // RESET 
         this.elementName = '';
+        this.error=false
+        
+      }else{
+        this.error=true
       }
     },
 
